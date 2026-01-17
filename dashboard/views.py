@@ -2,8 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import requests
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
+def index(request):
+    return HttpResponse("Hello, authenticated user!")
+    
+@login_required
 def dashboard(request):
 
     response = requests.get(settings.API_URL)  # URL de la API
@@ -30,3 +35,6 @@ def dashboard(request):
         "table_data": table_data,
     }
     return render(request, 'dashboard/index.html', data)
+
+
+
