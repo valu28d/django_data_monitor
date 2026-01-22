@@ -146,5 +146,4 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = STATIC_FILES_DIR
 
-# Simplified WhiteNoise storage
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# No custom storage - let WhiteNoise handle it automatically
