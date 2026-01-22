@@ -146,4 +146,7 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = STATIC_FILES_DIR
 
-# No custom storage - let WhiteNoise handle it automatically
+# WhiteNoise configuration for production
+WHITENOISE_SKIP_COMPRESS_EXTENSIONS = []
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_AUTOREFRESH = True
