@@ -16,6 +16,10 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Ensure static files directory exists
+STATIC_FILES_DIR = BASE_DIR / "staticfiles"
+os.makedirs(STATIC_FILES_DIR, exist_ok=True)
+
 API_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 
@@ -140,7 +144,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = STATIC_FILES_DIR
 
 # Simplified WhiteNoise storage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
